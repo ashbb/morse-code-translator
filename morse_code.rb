@@ -38,7 +38,7 @@ HASH_MORSE = {
   '/' => ' ',
 }
 
-class ConvertToMorse
+class ConvertFromMorse
   def get_translated(string_morse)
     @translated_string = ""
     translate(string_morse)
@@ -52,7 +52,7 @@ class ConvertToMorse
   end
 end
 
-morse = ConvertToMorse.new
+morse = ConvertFromMorse.new
 
 morse.get_translated("-- --- .-. ... . / -.-. --- -.. . / - .... . / -. . .-- / -.. . .- -.. / .-.. .- -. --. ..- .- --. . .-.-.-")
 morse.get_translated("--- -- --.  .. ...  -- --- .-. ... .  -.-. --- -..")
