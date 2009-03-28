@@ -44,6 +44,10 @@ class ConvertFromMorse
     puts translate(string_morse)
   end
 
+  def mk_morse_code line
+    line.split('').map{|c| HASH_MORSE.index c.downcase}.join(' ')
+  end
+
   private
   def translate(string_morse)
     array_morse = string_morse.split()
@@ -59,3 +63,7 @@ morse.get_translated("--- -- --.  .. ...  -- --- .-. ... .  -.-. --- -..")
 morse.get_translated("- .-- . . - ... / .- .-. . / . ...- . -. / ... .... --- .-. - . .-. / .-- .. - .... / -- --- .-. ... . / -.-. --- -..")
 morse.get_translated("-- --- .-. ... .   -.-. --- -.. .   .. ...   -... .- -..   ..-. --- .-.   - .-- . . - .. -. --")
 morse.get_translated(".. - /  .. ... /  .- /  .--. .-.. . .- ... ..- .-. . /  - --- /  -- . . - /  -.-- --- ..- /  .- ... /  .-- . .-.. .-.")
+
+mc = morse.mk_morse_code('HAHAHA Interesting! Thx PotHix.')
+puts mc
+morse.get_translated mc
