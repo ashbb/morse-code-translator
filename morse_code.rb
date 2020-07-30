@@ -1,6 +1,6 @@
 HASH_MORSE = {
   '.-' => 'a',
-  '-..' => 'b',
+  '-...' => 'b',
   '-.-.' => 'c',
   '-..' => 'd',
   '.' => 'e',
@@ -33,7 +33,7 @@ HASH_MORSE = {
   '-....' => '6',
   '--...' => '7',
   '---..' => '8',
-  '----.' => '8',
+  '----.' => '9',
   '-----' => '0',
   '/' => ' ' # Mapping foward bar to be a space
 }
@@ -45,7 +45,7 @@ class ConvertFromMorse
   end
 
   def mk_morse_code line
-    line.split('').map{|c| HASH_MORSE.index c.downcase}.join(' ')
+    line.split('').map{|c| HASH_MORSE.key c.downcase}.join(' ')
   end
 
   private
